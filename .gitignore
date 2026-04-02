@@ -1,0 +1,28 @@
+openai_key.txt
+*.out
+/targets/*
+/runs/*
+/ollama/*
+
+# G2Fuzz build artifacts
+G2FUZZ/*.o
+G2FUZZ/*.so
+G2FUZZ/*.a
+G2FUZZ/afl-*
+G2FUZZ/*-pass.so
+G2FUZZ/*-instructions-pass.so
+G2FUZZ/*-routines-pass.so
+G2FUZZ/*-switches-pass.so
+G2FUZZ/lib*.a
+
+# Build directories
+G2FUZZ/build/
+G2FUZZ/instrumentation/
+G2FUZZ/qemu_mode/build/
+G2FUZZ/unicorn_mode/build/
+G2FUZZ/frida_mode/build/
+G2FUZZ/nyx_mode/build/
+
+# Python caches
+G2FUZZ/__pycache__/
+G2FUZZ/*/__pycache__/
