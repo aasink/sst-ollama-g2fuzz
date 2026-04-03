@@ -1,6 +1,7 @@
 openai_key.txt
 *.out
 /targets/*
+/scripts/*
 /runs/*
 /ollama/*
 
