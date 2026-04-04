@@ -15,6 +15,10 @@ G2FUZZ/*-instructions-pass.so
 G2FUZZ/*-routines-pass.so
 G2FUZZ/*-switches-pass.so
 G2FUZZ/lib*.a
+G2FUZZ/src/*.o
+G2FUZZ/utils/*_driver
+G2FUZZ/utils/libtokencap/*.so
+G2FUZZ/utils/libdislocator/*.so
 
 # Build directories
 G2FUZZ/build/
