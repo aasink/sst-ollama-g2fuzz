@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --gres=gpu:1
 #SBATCH --constraint="rtx_6000"
-#SBATCH --mem=24000
+#SBATCH --mem=16000
 #SBATCH -n 3
 #SBATCH -t 04:00:00
 #SBATCH -p gpu
