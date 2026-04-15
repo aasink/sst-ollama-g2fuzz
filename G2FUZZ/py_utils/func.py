@@ -541,12 +541,28 @@ def pip_debug(msg, MAX_TRY, model, temperature):
     # install library via pip
     print("You should install:", code)
     cmd = code.split()
+    # try:
+    #     subprocess.check_call(cmd, timeout=120)
+    #     install_flag = 1
+    #     print(f"'{cmd}' successfully.")
+    # except subprocess.CalledProcessError:
+    #     print(f"'{cmd}' failed.")
+
+    # Check if it looks like a valid pip command
+    if not cmd or cmd[0] not in ['pip', 'pip3', 'python', 'python3']:
+        print(f"Invalid pip command returned by LLM: {code}")
+        pip_debug_record.append(msg)
+        return install_flag
+    # Strip jupyter notebook syntax
+    if cmd[0].startswith('!'):
+        cmd[0] = cmd[0][1:]
     try:
         subprocess.check_call(cmd, timeout=120)
         install_flag = 1
         print(f"'{cmd}' successfully.")
     except subprocess.CalledProcessError:
         print(f"'{cmd}' failed.")
+
 
     pip_debug_record.append(msg)
     return install_flag
