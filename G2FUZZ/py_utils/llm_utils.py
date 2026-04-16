@@ -1,7 +1,7 @@
 import ollama
 from ollama import Client, ResponseError
 
-client = Client(host='http://localhost:11434', timeout=600)
+client = Client(host='http://localhost:11434', timeout=300)
 
 def llm(model, prompt, temperature):
     for attempt in range(3):
